@@ -8,7 +8,7 @@ init(convert = True)
 
 # Importing the image and reducing its size to a thumbnail
 size = 256,256
-image = Image.open('C:/Users/Alexandra Lindona/Desktop/Gaga/Projects/ASCII Images/profilepic.jpg')
+image = Image.open('./pic.jpg')
 image.thumbnail(size)
 width, height = image.size
 
@@ -20,7 +20,6 @@ for char in ASCII_chars:
     char_list.append(char)
 
 char_list_inverse = char_list[::-1]
-
 
 # Creating a matrix to accomodate the pixel matrix and then scanning the image into the matrix
 def get_pixel_matrix():
@@ -35,7 +34,6 @@ def get_pixel_matrix():
             px_matrix[x][y] = px[i]
             i += 1
     return px_matrix
-
 
 # Getting the tuple's means as a value for brightness, and adding them to a new matrix
 def get_brightness_matrix(matrix, option=1):
